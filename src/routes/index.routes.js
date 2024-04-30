@@ -1,5 +1,6 @@
 import { Router } from "express";
 const router = Router();
+import { signUser , restrictedPage } from "../controllers/users.controllers.js";
 
 /* Rutas */
 router.get("/", async (req, res) => {
@@ -10,8 +11,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-/* router.use("/gastos", rutasPagos);
-router.use("/roommates", rutaRoommates);
- */
+router.use("/SignIn", signUser);
+router.get("/dashboard", restrictedPage);
 
 export default router;

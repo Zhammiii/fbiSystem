@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 /* router */
-app.use ('/apiV1', rutas)
+app.use ('/', rutas)
 
 /* ruta generica */
 app.get("*", (req, res) => {
